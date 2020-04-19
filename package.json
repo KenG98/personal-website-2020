@@ -4,5 +4,8 @@
   "main": "index.js",
   "repository": "https://github.com/KenG98/personal-website-2020.git",
   "author": "Ken Garber <kengarber98@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "gatsby-cli": "^2.11.11"
+  }
 }
