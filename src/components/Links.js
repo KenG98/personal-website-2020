@@ -1,5 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, Typography, Container } from "@material-ui/core";
+
+function ShowEmailText() {
+  const [showEmail, setShowEmail] = useState(false);
+  return showEmail ? (
+    "ken" + "garber" + "@" + "gmail" + "." + "com"
+  ) : (
+    <Link onClick={() => setShowEmail(true)}>{"Click to show Email"}</Link>
+  );
+}
 
 function Links() {
   return (
@@ -13,8 +22,11 @@ function Links() {
           linkedin.com/in/kengar/
         </Link>
       </Typography>
+      <Typography gutterBottom>
+        Resume: <Link href="/KenGarberResume.pdf">Download PDF</Link>
+      </Typography>
       <Typography>
-        Resume: <Link>Download PDF</Link>
+        Contact: <ShowEmailText />
       </Typography>
     </Container>
   );
