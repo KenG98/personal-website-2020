@@ -5,5 +5,5 @@
  */
 
 module.exports = {
-  plugins: ["gatsby-plugin-eslint"],
+  plugins: ["gatsby-plugin-eslint", "gatsby-plugin-flow"],
 };

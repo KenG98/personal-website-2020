@@ -1,32 +1,36 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link, Typography, Container } from "@material-ui/core";
+import Contact from "./Contact";
 
-function ShowEmailText() {
-  const [showEmail, setShowEmail] = useState(false);
-  return showEmail ? (
-    "ken" + "garber" + "@" + "gmail" + "." + "com"
-  ) : (
-    <Link onClick={() => setShowEmail(true)}>{"Click to show Email"}</Link>
+type MyLinkPropType = {
+  label: String,
+  href: String,
+  text: String,
+};
+function MyLink({ label, href, text }: MyLinkPropType) {
+  return (
+    <Typography gutterBottom>
+      {label}: <Link href={href}>{text}</Link>
+    </Typography>
   );
 }
 
 function Links() {
   return (
     <Container>
-      <Typography gutterBottom>
-        GitHub: <Link href="https://github.com/KenG98">github.com/KenG98</Link>
-      </Typography>
-      <Typography gutterBottom>
-        LinkedIn:{" "}
-        <Link href="https://www.linkedin.com/in/kengar/">
-          linkedin.com/in/kengar/
-        </Link>
-      </Typography>
-      <Typography gutterBottom>
-        Resume: <Link href="/KenGarberResume.pdf">Download PDF</Link>
-      </Typography>
+      <MyLink
+        label="GitHub"
+        href="https://github.com/KenG98"
+        text="github.com/KenG98"
+      />
+      <MyLink
+        label="LinkedIn"
+        href="https://www.linkedin.com/in/kengar/"
+        text="linkedin.com/in/kengar/"
+      />
+      <MyLink label="Resume" href="/KenGarberResume.pdf" text="Download PDF" />
       <Typography>
-        Contact: <ShowEmailText />
+        <Contact />
       </Typography>
     </Container>
   );
